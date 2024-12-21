@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="nav-wrapper">
+            <nav class="nav">
+                <img src="/butterfly.png" alt="" class="nav__img">
+                <ul class="nav-items">
+                    <% item.forEach((el)=>{ %>
+                        <li class="nav-item"><%= el %></li>
+                    <% }) %>
+                </ul>
+                <div class="nav-option">
+                    <% option.forEach((el)=>{ %>
+                        <img class="nav-option__img" src="<%= el %>">
+                    <% }) %>
+                </div>   
+            </nav>
+        </div>
+        <main class="main">
+            div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <% slides.forEach((el)=>{ %>
+        <div class="swiper-slide"><img src="<%= el %>" alt=""></div>
+    <% }) %>   
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+</div>
+        </main>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+</html>

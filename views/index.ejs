@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
@@ -27,29 +23,36 @@
                 </div>   
             </nav>
         </div>
-        <main class="main">
-            div class="swiper">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    <% slides.forEach((el)=>{ %>
-        <div class="swiper-slide"><img src="<%= el %>" alt=""></div>
-    <% }) %>   
-  </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
+        <div class="    ">
+            <main class="main">
+                <div class="items">
+                    <% infoCard.forEach((index) => { %>
+                        <div class="item">  
+                            <img src="<%= index.image%>" alt="" class="img">
+                            <h3 class="title"><%= index.name  %></h3>
+                            <div class=""><span class="color__red">RED</span><span class="color__black">BLACK</span></div>
+                            
+                            <p class="price"><%= index.price %></p>
+                            <button class="btn">BUY</button>
+                        </div>
+                   <% }) %>
+                        </main>
+        </div>
 
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-
-  <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div>
-</div>
-        </main>
+        <div class="footer-wrapper">
+            <footer class="footer">
+                <ul class="footer-ul">
+                    <% item.forEach((el)=>{ %>
+                        <li class="footer__li"><%= el %></li>
+                    <% }) %>
+                </ul>
+                <ul class="footer-ul">    
+                    <% footerOption.forEach((el)=>{ %>
+                        <li class="footer__li"><%= el %></li>
+                    <% }) %>
+                </ul>
+            </footer>
+        </div>
     </div>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>

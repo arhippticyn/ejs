@@ -6,30 +6,26 @@ app.use(express.static('image'))
 app.get('/',(req,res)=>{
     let itemInfo = {item: ['Головна', 'Акції', 'Про нас'],
         option: ['/user.png', '/loupe.png', '/cart.png'],
-        slides: ['/tenergy.png', 'ldkhsakjdhkjdhakdh.jpg', 'slide2.png']
+        infoCard: [
+          {
+            name: "Накладка Butterfly Dignics 05",
+            price: "3800 грн",
+            image: "/rubber_dignics_05_cover_enl.jpg" // Замініть на реальне посилання на фото
+          },
+          {
+            name: "Накладка Butterfly Dignics 09C",
+            price: "3800 грн",
+            image: "/rubber_dignics_09c_05_enl.jpg" // Замініть на реальне посилання на фото
+          },
+          {
+            name: "Накладка Butterfly Tenergy 05",
+            price: "3000 грн",
+            image: "/rubber_tenergy_05_cover_1.jpg" // Замініть на реальне посилання на фото
+          },
+        ],
+        footerOption: ["Про нас", "Контакти", "Політика конфіденційності"]
     }
-    const swiper = new Swiper('.swiper', {
-        // Optional parameters
-        direction: 'vertical',
-        loop: true,
-      
-        // If we need pagination
-        pagination: {
-          el: '.swiper-pagination',
-        },
-      
-        // Navigation arrows
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      
-        // And if we need scrollbar
-        scrollbar: {
-          el: '.swiper-scrollbar',
-        },
-      });
-    res.render('index', itemInfo, swiper)
+    res.render('index', itemInfo)
 })
 const PORT = 3000
 app.listen(PORT,()=>{

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <h1>This is Main page</h1>
+
+    <h2>Акції</h2>
+    <div class="items">
+        <% infoSales.forEach((index) => { %>
+            <div class="item">  
+                <img src="<%= index.photo%>" alt="" class="img">
+                <h3 class="title"><%= index.title  %></h3>
+                <p class="descr"><%= index.description %></p>
+            </div>
+       <% }) %>
+    </div>
+</body>
+</html>
